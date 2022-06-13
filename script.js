@@ -35,7 +35,7 @@ const gamePlayFlow = (() => {
     vsPlayer.addEventListener("click", humanPlay);
     vsAI.addEventListener("click", aiPlay);
     
-    announcement.innerText = "Player1 Go First"
+    announcement.innerText = "Player X Go First"
   };
 
   //if choose human player, initializeGameBoard
