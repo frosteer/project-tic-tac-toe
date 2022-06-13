@@ -72,11 +72,11 @@ const gamePlayFlow = (() => {
   function switchPlayer() {
     if (currentPlayer == player1) {
       currentPlayer = player2
-      announcement.innerText = "Player2's Turn"
+      announcement.innerText = "Player O's Turn"
     } else {
     if (currentPlayer == player2) {
       currentPlayer = player1
-      announcement.innerText = "Player1's Turn"
+      announcement.innerText = "Player X's Turn"
     }}
   };
   
@@ -119,7 +119,7 @@ const gamePlayFlow = (() => {
     //check if player1 is winner
     for (let i = 0; i < winningArray.length; i++) {
       if (winningArray[i].every(num => player1Array.indexOf(num) != -1)) {
-        announcement.innerText = "The Winner is Player1 !"
+        announcement.innerText = "The Winner is Player X !"
         announcement.style.color = "#7c3aed";
         announcement.style.fontSize = "2.5rem";
         box.forEach(item => item.removeEventListener("click", putInPlayerSign));
@@ -129,7 +129,7 @@ const gamePlayFlow = (() => {
     //check if player2 is winner
     for (let i = 0; i < winningArray.length; i++) {
       if (winningArray[i].every(num => player2Array.indexOf(num) != -1)) {
-        announcement.innerText = "The Winner is Player2 !";
+        announcement.innerText = "The Winner is Player O !";
         announcement.style.color = "#7c3aed";
         announcement.style.fontSize = "2.5rem";
         box.forEach(item => item.removeEventListener("click", putInPlayerSign));
@@ -176,9 +176,10 @@ const gamePlayFlow = (() => {
     player1Array = [];
     player2Array = [];
     array = ["","","","","","","","",""]
-    announcement.innerText = "Let's Start! Player1 First";
+    announcement.innerText = "Let's Start! Player X First";
     box.forEach(box => box.innerText = "");
     box.forEach(item => item.addEventListener("click", putInPlayerSign));
+    let currentPlayer = player1;
   };
 
     //Function Footer
